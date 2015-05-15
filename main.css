@@ -20,6 +20,13 @@ top: 20%;
 
 }
 
+label{
+	position: left;
+	text-align: left;
+	font-size: 30px
+}
+
+
 .php{height: 200px;
 width: 200px;
 overflow-y: scroll;
