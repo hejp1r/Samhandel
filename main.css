@@ -20,10 +20,9 @@ top: 20%;
 
 }
 
-label{
+.loggain{
 	position: left;
-	text-align: left;
-	font-size: 30px
+	text-align:left;
 }
 
 
