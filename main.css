@@ -33,6 +33,11 @@ h1{
 	text-align:right;
 }
 
+input[type=submit]
+{
+	cursor:pointer;
+}
+
 .php{height: 200px;
 width: 200px;
 overflow-y: scroll;
