@@ -25,8 +25,9 @@ top: 20%;
 	text-align:right;
 }
 
-.input{
-	position:left;
+.loggain{
+	position:right;
+	text-align:right;
 }
 
 .php{height: 200px;
