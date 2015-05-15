@@ -25,6 +25,9 @@ top: 20%;
 	text-align:right;
 }
 
+.input{
+	position:left;
+}
 
 .php{height: 200px;
 width: 200px;
