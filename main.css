@@ -6,7 +6,7 @@ font-family:Candara;
 
 header{
 	height: 14%;
-background-image: url('../bilder/header3.jpg');
+background-image: url('header3.jpg');
 width: 100%;
 z-index: 10;
 position: fixed;
@@ -24,8 +24,10 @@ h2{
 }
 
 .loggain{
-
-	text-align:right;
+    
+    position: absolute;
+    width: 100px;
+    right: 130px;
 }
 
 .loggain{
@@ -56,7 +58,7 @@ background-color: #9999FF;
 	height: 50%;
 	position: fixed;
 	top: 15%;
-background-image: url('../bilder/mat1.jpg');
+background-image: url('mat1.jpg');
 	background-size: cover;
 }
 
@@ -76,7 +78,7 @@ background-image: url('../bilder/mat1.jpg');
 	position: fixed;
 	top: 427px;
 	height: 1500px;
-	background-image: url('../bilder/bild2.jpg');
+	background-image: url('bild2.jpg');
 
 
 }
