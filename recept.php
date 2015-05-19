@@ -1,3 +1,3 @@
 <?php
-header('Location:file:///C:/Users/Linn/Documents/GitHub/Samhandel/');
+header('Location:file:///C:/Users/Linn/Documents/GitHub/Samhandel/recept.php');
 ?>
