@@ -16,9 +16,9 @@ if($conn->connect_error){
 }
 
 
-$username = $_POST['namn'];
-$password = $_POST['password'];
-$mail = $_POST['email'];
+$username =  mysqli_real_escape_string($conn, $_POST['namn']);
+$password =  mysqli_real_escape_string($conn, $_POST['password']);
+$mail =  mysqli_real_escape_string($conn, $_POST['email']);
 
 $salt1 = uniqid(mt_rand(), true);
 $salt2 = uniqid(mt_rand(), true);
@@ -48,11 +48,24 @@ function createUser($conn, $username, $hash, $salt1, $salt2, $mail){
     }
 }
 
-$empty = isEmpty($username);
+
 //echo "         " . $empty;
 //var_dump($username);
-if($empty == true){
+if ($result = mysqli_query($conn, "SELECT email FROM user WHERE '$mail'= eMail" )) { //om email är samma som någon email i db
+
+    $row_cnt = mysqli_num_rows($result); //antar rader med samma email
+    if($row_cnt < 1)
+    {
+
     createUser($conn, $username, $hash, $salt1, $salt2, $mail);
+    }
+    mysqli_free_result($result);
+    /*
+    else
+    {
+        echo "<script>alert('användare finns redan!');</script>";
+        
+    }*/
 }
 
 
