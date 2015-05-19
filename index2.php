@@ -13,7 +13,7 @@
 				<h2>Samhandla</h2>
 			
 				
-
+<p> hallo </p>
 			<div class = "loggain">
 			<input type="submit" name="minalistor" id="minalistor" value="Mina listor" />
 			<input type="submit" name="recept" id="recept" value="Söka recept" />
