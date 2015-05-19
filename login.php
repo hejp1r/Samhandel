@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "root";
-$dbname = "test";
+$dbname = "samhandla";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -13,11 +13,10 @@ if ($conn->connect_error) {
     echo "<p>upprättad kontakt </p>";
 }
 
+$user = $_POST['anamn'];
+$pass = $_POST['pass'];
 
-$user = $_POST['namn'];
-$pass = $_POST['password'];
-
-echo $user;
+var_dump($user);
 
 function getSalt($user, $conn){
     echo " salt";
@@ -49,7 +48,8 @@ function checkPassword($user, $pass, $conn){
     if($password == $hash['hash']){
         echo "<script>location.href='index2.php';</script>";
     } else{
-        echo "fel lösen";
+        echo "fel lösenord";
+        echo "<script>location.href='index.php'; alert('fel lösen eller användare');</script>";
     }
 }
 

@@ -31,7 +31,7 @@
 			<p>
 				Tjänsten bygger på att ni, sambos eller vänner, kan skapa gemensamma shoppinglistor. Ska ni ha fest? - Ja men varför inte låta alla skriva in vad som behövs? Då glöms inget bort. 
 			</p>
-			<form id="form" name="form" method="POST" action="">
+			<form id="form" name="form" method="POST" action="index.php">
                 <fieldset>
                     <legend> Var god registrera dig</legend>
                     <label for="namn">Användarnamn:</label> <br>
