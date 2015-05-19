@@ -1,25 +1,59 @@
 <?php
 
-$mindb = new mysqli('localhost','root','root','samhandla'); //kopplar till databasen
-$email = mysqli_real_escape_string($mindb,$_POST['email']); //alla namn sparas genom POST metoden i "namn".
-$password = mysqli_real_escape_string($mindb,$_POST['password']);
-$salt = RandomString();
-$krypteratPass = sha1($password.$salt);
+echo "hejhej";
 
-if ($result = mysqli_query($mindb, "SELECT email FROM samhandla WHERE '$email'= email" )) { //om email är samma som någon email i db
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$dbname = "samhandla";
 
-    $row_cnt = mysqli_num_rows($result); //antar rader med samma email
+$conn = new mysqli($servername, $username, $password, $dbname);
 
+if($conn->connect_error){
+    die("ingen kontakt");
+} else{
+    echo "UPPRÄTTAD KONTAKT" . $conn->connect_error;
+}
+
+
+$username = $_POST['namn'];
+$password = $_POST['password'];
+$mail = $_POST['email'];
+
+$salt1 = uniqid(mt_rand(), true);
+$salt2 = uniqid(mt_rand(), true);
+
+$hash = sha1($salt1 . $password . $salt2);
+
+function isEmpty($var){
+    if($var === NULL){
+        echo "ingenting här";
+        return false;
+    } else{
+        echo "här hittade vi nåt!";
+        return true;
+    }
     
-    	if($row_cnt < 1){ //om raderna som hämtas i databasen är mindre än 1, el dvs 0.
-		$res = $mindb->query("INSERT INTO samhandla(email, password, salt) VALUES ('$email', '$krypteratPass', '$salt')");
-		header('Location:http://localhost/index.php?message=Godkänd registrering. Välkommen!');
-		/* close result set */
-		 mysqli_free_result($result);
-	}
-	else
-	{
-		header('Location:http://localhost/index2.php?message=Emailadressen existerar redan! Välj annan emailadress.');
-	}
-} 
+}
+
+function createUser($conn, $username, $hash, $salt1, $salt2, $mail){
+    
+        $sql = "INSERT INTO user (userName, hash, salt1, salt2, eMail)
+        VALUES ('$username', '$hash', '$salt1', '$salt2', '$mail')";
+    
+    if($conn->query($sql) === true){
+        echo "redirecta";
+    } else{
+        echo "det var ju synd". $sql . "<br>" . $conn_error;
+    }
+}
+
+$empty = isEmpty($username);
+echo "         " . $empty;
+var_dump($username);
+if($empty == true){
+    createUser($conn, $username, $hash, $salt1, $salt2, $mail);
+}
+
+
 ?>
