@@ -6,6 +6,7 @@
 	</head>
 	
 	<body>
+        <?php include("reg.php"); ?>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<div id="container">
 			<header>
@@ -13,11 +14,11 @@
 				<p> Hej på dig </p>
 				<div class = "loggain">
 				<label for="namn">Användarnamn:</label> <br/>
-			<input type="text" name="namn" id="namn"/>
+			<input type="text" name="name" id="name"/>
 			<br/>
 
 			<label for="email">Lösenord: </label> <br />
-			<input type="text" name="password" id="password"/><br/>
+			<input type="text" name="pass" id="pass"/><br/>
 			<input type="submit" name="loggain" id="loggain" value="Logga in" />
 			</div>
 			</header>
@@ -26,22 +27,19 @@
 			<div id="content2">
 			<br/>
 			<p> Välkommen att använda tjänsten "SamHandla"! </p> 
-			<b/> 
+			<b/>
+                <p>kom ihåg att ta bort den här kommentaren</p>
 			<p>
 				Tjänsten bygger på att ni, sambos eller vänner, kan skapa gemensamma shoppinglistor. Ska ni ha fest? - Ja men varför inte låta alla skriva in vad som behövs? Då glöms inget bort. 
-			</p>
+			</p> <!-- här kommer en till -->
 			<fieldset>
 					<legend> Var god registrera dig</legend>
 				
-			
-				
-				<label for="namn">Användarnamn:</label> <br/>
-			<input type="text" name="namn" id="namn"/>
-			<br/>
-
-
-			<label for="email">Lösenord: </label> <br />
-			<input type="text" name="password" id="password"/><br/>
+                <form action="index.php" method="post">
+				    <label for="namn">Användarnamn:</label> <br/>
+			         <input type="text" name="namn" id="namn"/><br/>
+                <label for="email">Lösenord: </label> <br />
+			 <input type="text" name="password" id="password"/><br/>
 			
 				<label for="namn">Upprepa lösenord: </label> <br/>
 			<input type="text" name="password2" id="password2"/>
@@ -53,6 +51,7 @@
 				<br/>
 				<input type="submit" name="reg" id="reg" value="Registrera" />
 				<br/>
+                </form>
 			</fieldset>
 				</div>	
 			<div id="content">	
