@@ -1,17 +1,27 @@
-var submitBtn = document.getElementById('form').onsubmit = validateForm;
+document.onload = validateForm();
+
+    var namn;
+ 	var password;
+ 	var email;
+ 	var password2;
+    var form;
 
 function validateForm()
  {
-    var namn = document.getElementById("namn").value;
- 	var password = document.getElementById("password").value;
- 	var email = document.getElementById("email").value; 
- 	var email = document.getElementById("password2").value; 
+    namn = document.getElementById("namn");
+    password = document.getElementById("password");
+ 	email = document.getElementById("email"); 
+ 	password2 = document.getElementById("password2");
+    form = document.getElementById("form");
+ }
 
- 	if (namn.trim() == "" || namn == null || email.trim() == "" || email == null || password.trim() == "" || pasword == null || password2.trim() == "" || password == null || password != password2) 
+
+form.addEventListener("submit", function(event){ 
+ 	if (namn.trim() == "" || namn == null || email.trim() == "" || email == null || password.trim() == "" || password == null || password2.trim() == "" || password2 == null || password != password2) 
  	{
  		console.log("Felaktig input.");
  		alert("Var god fyll i alla fält");
- 		return false;
+ 		event.preventDefault();
  	}
 
  	var afound = false;
@@ -30,5 +40,6 @@ function validateForm()
 
 
  	alert("Registrering godkänd!");
- 	return true; 
-}
+ 	return true;
+})
+
