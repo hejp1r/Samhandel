@@ -13,8 +13,8 @@ if ($conn->connect_error) {
     echo "<p>upprättad kontakt </p>";
 }
 
-$user = /*mysqli_real_escape_string($conn,*/ $_POST['anamn'];
-$pass = /*mysqli_real_escape_string($conn,*/ $_POST['pass'];
+$user = mysqli_real_escape_string($conn, $_POST['anamn']);
+$pass = mysqli_real_escape_string($conn, $_POST['pass']);
 
 var_dump($user);
 
@@ -54,11 +54,13 @@ function checkPassword($user, $pass, $conn){
         $_SESSION['user'] = $user;
         echo "Här ska det va session å sånt";
       //  echo "<script>location.href='index2.php';</script>";
-
     } else{
         echo "fel lösenord";
         echo "<script>location.href='index.php'; alert('fel lösen eller användare');</script>";
     }
 }
+
     checkPassword($user, $pass, $conn);
+
+
 ?>

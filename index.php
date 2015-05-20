@@ -5,9 +5,14 @@
 		<link rel="stylesheet" href= "main.css">
 		
 	</head>
-	
 	<body>
-        <?php include("processreg.php") ?>
+        <?php
+if(isset($_GET['message'])){
+    $message = $_GET['message'];
+    echo "<script>alert('$message');</script>";
+}
+
+?>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<div id="container">
 			<header>
@@ -31,7 +36,7 @@
 			<p>
 				Tjänsten bygger på att ni, sambos eller vänner, kan skapa gemensamma shoppinglistor. Ska ni ha fest? - Ja men varför inte låta alla skriva in vad som behövs? Då glöms inget bort. 
 			</p>
-			<form id="form" name="form" method="POST" action="index.php">
+			<form id="form" name="form" method="POST" action="processreg.php">
                 <fieldset>
                     <legend> Var god registrera dig</legend>
                     <label for="namn">Användarnamn:</label> <br>

@@ -42,31 +42,33 @@ function createUser($conn, $username, $hash, $salt1, $salt2, $mail){
         VALUES ('$username', '$hash', '$salt1', '$salt2', '$mail')";
     
     if($conn->query($sql) === true){
-        echo "<script>alert('ny användare skapad');</script>";
+       // echo "";
+            header('Location:index.php?message=Användare skapad'); //ossäkkkkkert
+        
     } else{
         //echo "det var ju synd". $sql . "<br>" . $conn_error;
     }
 }
 
 
-//echo "         " . $empty;
-//var_dump($username);
-if ($result = mysqli_query($conn, "SELECT email FROM user WHERE '$mail'= eMail" )) { //om email är samma som någon email i db
+//function checkAll(){
+    
+    
+    if ($result = mysqli_query($conn, "SELECT email FROM user WHERE '$mail'= eMail" )) { //om email är samma som någon email i db
 
     $row_cnt = mysqli_num_rows($result); //antar rader med samma email
     if($row_cnt < 1)
     {
-
     createUser($conn, $username, $hash, $salt1, $salt2, $mail);
     }
-    mysqli_free_result($result);
-    /*
     else
     {
         echo "<script>alert('användare finns redan!');</script>";
+        header('Location:index.php');
         
-    }*/
+    }
+        mysqli_free_result($result);
 }
 
-
+//}
 ?>

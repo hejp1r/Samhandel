@@ -30,6 +30,5 @@ function validateForm()
  		return false;
 
 
- 	alert("Registrering godkänd!");
  	return true; 
 }
