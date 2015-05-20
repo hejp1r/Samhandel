@@ -7,7 +7,7 @@ function validateForm()
  	var email = document.getElementById("email").value; 
  	var email = document.getElementById("password2").value; 
 
- 	if (namn.trim() == "" || namn == null || email.trim() == "" || email == null || password.trim() == "" || pasword == null || password2.trim() == "" || password == null || password != password2) 
+ 	if (namn.trim() == "" || namn == null || email.trim() == "" || email == null || password.trim() == "" || password == null || password2.trim() == "" || password2 == null || password != password2) 
  	{
  		console.log("Felaktig input.");
  		alert("Var god fyll i alla fält");

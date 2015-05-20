@@ -13,8 +13,8 @@ if ($conn->connect_error) {
     echo "<p>upprättad kontakt </p>";
 }
 
-$user = $_POST['anamn'];
-$pass = $_POST['pass'];
+$user = mysqli_real_escape_string($conn, $_POST['anamn'];
+$pass = mysqli_real_escape_string($conn, $_POST['pass'];
 
 var_dump($user);
 

@@ -3,7 +3,7 @@
 	<head>
 	<title>SamHandla mera</title>
 		<link rel="stylesheet" href= "main.css">
-		<script src="main.js"></script>
+		
 	</head>
 	
 	<body>
@@ -48,6 +48,7 @@
 				</div>	
 			<div id="content">	
 			</div>
-		</div>	
+		</div>
+		<script src="main.js"></script>	
 		</body>
 		</html>
