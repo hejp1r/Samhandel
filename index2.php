@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<?php session_start();
+if(isset($_SESSION['user'])){
+    echo "Welcome" . $_SESSION['user'];
+}
+else{
+    echo "logga in helvete";
+}
+?>
 <html>
 	<head>
 	<title>SamHandla mera</title>
