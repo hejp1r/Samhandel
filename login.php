@@ -46,7 +46,15 @@ function checkPassword($user, $pass, $conn){
     echo $hash['hash'];
     
     if($password == $hash['hash']){
+<<<<<<< Updated upstream
         echo "<script>location.href='index2.php';</script>";
+=======
+        header('Location:http//localhost:8888/Github/Samhandel/index2.php');
+        session_start();
+        $_SESSION['user'] = $user;
+        echo "Här ska det va session å sånt";
+      //  echo "<script>location.href='index2.php';</script>";
+>>>>>>> Stashed changes
     } else{
         echo "fel lösenord";
         echo "<script>location.href='index.php'; alert('fel lösen eller användare');</script>";
