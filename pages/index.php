@@ -2,8 +2,7 @@
 <html>
 	<head>
 	<title>SamHandla mera</title>
-		<link rel="stylesheet" href= "main.css">
-		
+		<link rel="stylesheet" href= "../css/main.css">
 	</head>
 	<body>
         <?php
@@ -18,7 +17,7 @@ if(isset($_GET['message'])){
 			<header>
 				<h1>VÄLKOMMEN TILL SAMHANDLA MERA</h1>
 				<div class = "loggain">
-                    <form action="login.php" method="post" id="form1">
+                    <form action="../processes/login.php" method="post" id="form1">
                         <label for="anamn">Användarnamn:</label> <br/>
                         <input type="text" name="anamn" id="anamn"/><br>
                         <label for="pass">Lösenord: </label> <br>
@@ -36,7 +35,7 @@ if(isset($_GET['message'])){
 			<p>
 				Tjänsten bygger på att ni, sambos eller vänner, kan skapa gemensamma shoppinglistor. Ska ni ha fest? - Ja men varför inte låta alla skriva in vad som behövs? Då glöms inget bort. 
 			</p>
-			<form id="form" name="form" method="POST" action="processreg.php">
+			<form id="form" name="form" method="POST" action="../processes/processreg.php">
                 <fieldset>
                     <legend> Var god registrera dig</legend>
                     <label for="namn">Användarnamn:</label> <br>
@@ -54,6 +53,6 @@ if(isset($_GET['message'])){
 			<div id="content">	
 			</div>
 		</div>
-		<script src="main.js"></script>	
+		<script src="../js/main.js"></script>	
 		</body>
 		</html>

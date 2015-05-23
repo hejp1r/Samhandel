@@ -51,7 +51,7 @@ function createUser($conn, $username, $hash, $salt1, $salt2, $mail){
 }
 
 
-//function checkAll(){
+function checkEmail($conn, $mail){
     
     
     if ($result = mysqli_query($conn, "SELECT email FROM user WHERE '$mail'= eMail" )) { //om email är samma som någon email i db
@@ -59,16 +59,41 @@ function createUser($conn, $username, $hash, $salt1, $salt2, $mail){
     $row_cnt = mysqli_num_rows($result); //antar rader med samma email
     if($row_cnt < 1)
     {
-    createUser($conn, $username, $hash, $salt1, $salt2, $mail);
+        return true;
     }
     else
     {
-        echo "<script>alert('användare finns redan!');</script>";
-        header('Location:index.php');
+       // echo "<script>alert('användare finns redan!');</script>";
+        header('Location:index.php?message=epost-adressen redan registrerad!');
         
     }
         mysqli_free_result($result);
 }
 
-//}
+}
+function checkUser($conn, $username){
+    
+    
+    if ($result = mysqli_query($conn, "SELECT userName FROM user WHERE '$username'= userName" )) { //om email är samma som någon email i db
+
+    $row_cnt = mysqli_num_rows($result); //antar rader med samma email
+    if($row_cnt < 1)
+    {
+        return true;
+    }
+    else
+    {
+       // echo "<script>alert('användare finns redan!');</script>";
+        header('Location:index.php?message=användare finns redan!');
+        
+    }
+        mysqli_free_result($result);
+}
+
+}
+
+if(checkUser($conn, $username) && checkEmail($conn, $mail)){
+    
+    createUser($conn, $username, $hash, $salt1, $salt2, $mail);
+}
 ?>

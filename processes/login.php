@@ -49,7 +49,7 @@ function checkPassword($user, $pass, $conn){
 
         //echo "<script>location.href='index2.php';</script>";
 
-        header('Location:index2.php');
+        header('Location:../pages/index2.php');
         session_start();
         $_SESSION['user'] = $user;
         echo "Här ska det va session å sånt";
