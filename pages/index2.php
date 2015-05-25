@@ -17,7 +17,7 @@ else{
 	
 	<body>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<div id="container">
+		<div id="container2">
 			<header>
 				<h2>Samhandla</h2>
                 <div class = "loggain">
@@ -31,21 +31,18 @@ else{
 			<div id="banner">
 			</div>
 			<div id="content2"><br>
-                <fieldset>
-                    <legend> Mina listor</legend>
+                
                     
-                    <div id="container">
-            		<div id="box">
-                	<h1>Ny Lista</h1>
+            <div id="container">
+            <div id="box">
+                <h1>Ny Lista</h1>
                 <input type="button" value="+" id="nylista">
             </div>
         </div>
         <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="../js/list.js"></script>
         <script src="../js/addprodukt.js"></script>
-                
-                </fieldset><br> 
-              <form action="index2.php" method ="POST" enctype="multipart/form-data">
+        <form id ="form" action="index2.php" method ="POST" enctype="multipart/form-data">
 			File:
 			<input type="file" name="image"><input type="submit" value="Upload">
 			</form>
@@ -79,6 +76,7 @@ else{
 			}
 			?>
 	  	    </div>	
+
 			<div id="content">	
 			</div>
 		</div>	

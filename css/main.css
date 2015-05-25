@@ -20,7 +20,7 @@ top: 20%;
 
 }
 h2{
-	text-align: left;
+	text-align: center;
 }
 
 .loggain{
@@ -118,3 +118,82 @@ a{
     top: 80%;
 
 }
+.addp:focus{
+    outline: 0;
+}
+
+.list{
+    background-color: whitesmoke;
+    border-color: darkgrey;
+    height: auto;
+    width: 300px;
+    margin-left: 25%;
+    margin-bottom: 25px;
+}
+h1{
+    font-family: futura;
+}
+p{
+    font-family: cursive;
+}
+#container{
+    text-align: center;
+    background-color: antiquewhite;
+    position: absolute;
+    width: 70%;
+    left: 50%;
+    margin-left: -35%;
+    top: 20%;
+}
+#nylista {
+    position: relative;
+    left: 23%;
+    top: -70px;
+  background: #accbe0;
+  background-image: -webkit-linear-gradient(top, #accbe0, #577080);
+  background-image: -moz-linear-gradient(top, #accbe0, #577080);
+  background-image: -ms-linear-gradient(top, #accbe0, #577080);
+  background-image: -o-linear-gradient(top, #accbe0, #577080);
+  background-image: linear-gradient(to bottom, #accbe0, #577080);
+  -webkit-border-radius: 60;
+  -moz-border-radius: 60;
+  border-radius: 60px;
+  -webkit-box-shadow: 0px 4px 9px #666666;
+  -moz-box-shadow: 0px 4px 9px #666666;
+  box-shadow: 0px 4px 9px #666666;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 52px;
+  padding: 0px 15px 0px 15px;
+  border: solid #bfc4c7 0px;
+  text-decoration: none;
+}
+
+#nylista:hover {
+  background: #ababab;
+  text-decoration: none;
+}
+#nylista:focus{
+    outline: 0;
+}
+#box{
+
+}
+.addp {
+  -webkit-border-radius: 60;
+  -moz-border-radius: 60;
+  border-radius: 60px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 15px;
+  background: #a2afb8;
+  padding: 0px 5px 0px 5px;
+  border: solid #bfc4c7 0px;
+  text-decoration: none;
+}
+
+.addp:hover {
+  background: #918f88;
+  text-decoration: none;
+}
+
