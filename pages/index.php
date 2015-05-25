@@ -21,7 +21,7 @@ if(isset($_GET['message'])){
                         <label for="anamn">Användarnamn:</label> <br/>
                         <input type="text" name="anamn" id="anamn"/><br>
                         <label for="pass">Lösenord: </label> <br>
-                        <input type="text" name="pass" id="pass"/><br>
+                        <input type="password" name="pass" id="pass"/><br>
                         <input type="submit" name="loggain" id="loggain" value="Logga in"><br>
                     </form>
 			</div>
@@ -41,9 +41,9 @@ if(isset($_GET['message'])){
                     <label for="namn">Användarnamn:</label> <br>
                     <input type="text" name="namn" id="namn"/><br>
                     <label for="password">Lösenord: </label><br>
-                    <input type="text" name="password" id="password"><br>
+                    <input type="password" name="password" id="password"><br>
                     <label for="password2">Upprepa lösenord: </label> <br>
-                    <input type="text" name="password2" id="password2"><br>
+                    <input type="password" name="password2" id="password2"><br>
                     <label for="email">E-postadress:</label> <br>
                     <input type="text" name="email" id="email"><br>
 				    <input type="submit" name="reg" id="reg" value="Registrera"><br>
