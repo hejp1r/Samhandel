@@ -135,6 +135,7 @@ h1{
 }
 p{
     font-family: cursive;
+
 }
 #container{
     text-align: center;
@@ -145,6 +146,7 @@ p{
     margin-left: -35%;
     top: 20%;
 }
+/*
 #nylista {
     position: relative;
     left: 23%;
@@ -197,3 +199,8 @@ p{
   text-decoration: none;
 }
 
+.search{
+	top: 10%;
+	position:left;
+	text-align:left;
+}

@@ -10,10 +10,9 @@ if(isset($_GET['message'])){
     $message = $_GET['message'];
     echo "<script>alert('$message');</script>";
 }
-
 ?>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<div id="container">
+		<div id="container2">
 			<header>
 				<h1>VÄLKOMMEN TILL SAMHANDLA MERA</h1>
 				<div class = "loggain">

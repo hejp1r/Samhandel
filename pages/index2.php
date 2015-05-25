@@ -20,6 +20,20 @@ else{
 		<div id="container2">
 			<header>
 				<h2>Samhandla</h2>
+
+				<div class = "search">
+                    <form action ="index2.php" method="POST">
+					<input type="text" name="search" placeholder = "Search for members"/>
+					<input type="submit" value=">>" />
+
+					</form>
+
+
+					<?php
+					include_once("search.php");
+					 print ("$output"); ?>
+				</div>
+
                 <div class = "loggain">
                     <input type="submit" name="minalistor" id="minalistor" value="Mina listor" />
                     <input type="submit" name="dagar" id="dagar" value="SPECIAL DAYS" />
@@ -42,6 +56,7 @@ else{
         <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="../js/list.js"></script>
         <script src="../js/addprodukt.js"></script>
+
         <form id ="form" action="index2.php" method ="POST" enctype="multipart/form-data">
 			File:
 			<input type="file" name="image"><input type="submit" value="Upload">
