@@ -43,7 +43,7 @@ function createUser($conn, $username, $hash, $salt1, $salt2, $mail){
     
     if($conn->query($sql) === true){
        // echo "";
-            header('Location:../pages/index2.php?message=Användare skapad'); //ossäkkkkkert
+            header('Location:/../pages/index.php?message=Användare skapad'); //ossäkkkkkert
         
     } else{
         //echo "det var ju synd". $sql . "<br>" . $conn_error;
@@ -64,7 +64,7 @@ function checkEmail($conn, $mail){
     else
     {
        // echo "<script>alert('användare finns redan!');</script>";
-        header('Location:../pages/index.php?message=epost-adressen redan registrerad!');
+        header('Location:/../pages/index.php?message=epost-adressen redan registrerad!');
         
     }
         mysqli_free_result($result);
@@ -84,7 +84,7 @@ function checkUser($conn, $username){
     else
     {
        // echo "<script>alert('användare finns redan!');</script>";
-        header('Location:../pages/index.php?message=användare finns redan!');
+        header('Location:/../pages/index.php?message=användare finns redan!');
         
     }
         mysqli_free_result($result);
