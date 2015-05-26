@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php session_start();
 if(isset($_SESSION['user'])){
-    echo "Welcome " . $_SESSION['user'];
+    echo "Välkommen " . $_SESSION['user'];
 }
 else{
     echo "logga in helvete";
@@ -17,9 +17,9 @@ else{
 	
 	<body>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<div id="container2">
+		
 			<header>
-				<h2>Samhandla</h2>
+				<h2>SAMHANDLA</h2>
 
 				<div class = "search">
                     <form action ="index2.php" method="POST">
@@ -52,12 +52,16 @@ else{
             <div id="container">
             <div id="box">
                 <h1>Ny Lista</h1>
+
                 <input type="button" value="+" id="nylista">
             </div>
+
         </div>
         <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="../js/list.js"></script>
+
         <script src="../js/addprodukt.js"></script>
+
 
         <form id ="form" action="index2.php" method ="POST" enctype="multipart/form-data">
 			File:
@@ -85,7 +89,7 @@ else{
 				{//$databas->query(¤sql)
 					if ($conn->query("INSERT INTO images (name, image) VALUES ('$image_name', '$image')"));
 					{
-					$lastid = mysql_insert_id();
+					$lastid = mysqli_insert_id();
 					echo "Bild uppladdad <p/> Din Bild: <p/> <img src='get.php?id='$lastid''>";
 					}
 					
@@ -93,6 +97,6 @@ else{
 			}
 			?>
 	  	    </div>	
-		</div>	
+	
 		</body>
 </html>

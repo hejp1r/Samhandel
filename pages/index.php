@@ -12,7 +12,7 @@ if(isset($_GET['message'])){
 }
 ?>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<div id="container2">
+
 			<header>
 				<h1>VÄLKOMMEN TILL SAMHANDLA MERA</h1>
 				<div class = "loggain">
@@ -51,7 +51,7 @@ if(isset($_GET['message'])){
 				</div>	
 			<div id="content">	
 			</div>
-		</div>
+
 		<script src="../js/main.js"></script>	
 		</body>
 		</html>

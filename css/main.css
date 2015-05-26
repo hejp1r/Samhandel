@@ -20,7 +20,8 @@ top: -1px;
 
 }
 h2{
-	text-align: center;
+	font-family: futura;
+	font-size: 150%;
 }
 
 .loggain{
@@ -33,6 +34,8 @@ h2{
 .loggain{
 	position:right;
 	text-align:right;
+	font-family: futura;
+	text-shadow: 0px 0px;
 }
 
 input[type=submit]
@@ -58,7 +61,7 @@ background-color: #9999FF;
 	height: 50%;
 	position: fixed;
 	top: 15%;
-background-image: url('../img/mat1.jpg');
+background-image: url('../img/bild.jpg');
 	background-size: cover;
 }
 
@@ -69,8 +72,10 @@ background-image: url('../img/mat1.jpg');
 	top:427px;
 	height:1000px;
 	z-index: 1;
+	width: 100%;
 	
 }
+
 
 
 legend
@@ -115,7 +120,7 @@ a{
     border-color: darkgrey;
     height: auto;
     width: 250px;
-    margin-left: 25%;
+    margin-left: 40%;
     margin-bottom: 25px;
 }
 h1{
@@ -191,4 +196,5 @@ p{
 	top: 10%;
 	position:left;
 	text-align:left;
+	text-shadow: 0px 0px;
 }
