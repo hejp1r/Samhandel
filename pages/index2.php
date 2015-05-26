@@ -35,11 +35,13 @@ else{
 				</div>
 
                 <div class = "loggain">
-                    <input type="submit" name="minalistor" id="minalistor" value="Mina listor" />
+                    <input type="submit" name="minalistor" id="minalistor" value="Mina listor" /> 
                     <input type="submit" name="dagar" id="dagar" value="SPECIAL DAYS" />
-                    <form action ="logout.php">
-                        <input type="submit" name="loggaut" id="loggaut" value="Logga ut"/>
+                    <form action ="../processes/logout.php">
+                    <input type="submit" name="loggaut" id="loggaut" value="Logga ut"/>
                     </form>	
+                    
+                    
                 </div>
 			</header>
 			<div id="banner">
@@ -91,9 +93,6 @@ else{
 			}
 			?>
 	  	    </div>	
-
-			<div id="content">	
-			</div>
 		</div>	
 		</body>
 </html>

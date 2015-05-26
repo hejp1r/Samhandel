@@ -5,7 +5,7 @@ font-family:Candara;
 }
 
 header{
-	height: 14%;
+height: 15,5%;
 background-image: url('../img/header3.jpg');
 width: 100%;
 z-index: 10;
@@ -15,8 +15,8 @@ font-size: 130%;
 letter-spacing: 4px;
 color: white;
 text-shadow: 2px 2px #C8C8C8 ;
-border-radius: 25px;
-top: 20%;
+top: -1px;
+
 
 }
 h2{
@@ -63,26 +63,14 @@ background-image: url('../img/mat1.jpg');
 }
 
 #content2{
-	width:50%;
-	left:25%;
+
 	position:absolute;
 	background: #FFFFFF;
-	top:435px;
+	top:427px;
 	height:1000px;
 	z-index: 1;
-	border-radius: 40px 40px;
+	
 }
-#content{
-
-	width: 100.6%;
-	position: fixed;
-	top: 427px;
-	height: 1500px;
-	background-image: url('bild2.jpg');
-
-
-}
-
 
 
 legend
@@ -146,7 +134,7 @@ p{
     margin-left: -35%;
     top: 20%;
 }
-/*
+
 #nylista {
     position: relative;
     left: 23%;
