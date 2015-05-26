@@ -33,7 +33,7 @@ function printLists($conn, $user){
     if($result){
         $count = 1;
         while($row = $result->fetch_assoc()){
-            echo "<div id='div". $count."'>";
+            echo "<div class='listdiv' id='div". $count."'>";
             $listName = $row['listName'];
             $listId = $row['listId'];
             echo "<h2>".$listName."</h2><input type='button' value='Visa' class='btnShow' id='btnShow" . $count ."'>";
@@ -65,7 +65,7 @@ function printProducts($conn, $listId, $count){
     if($result){
         $prodCount = 1;
         while($row = $result->fetch_assoc()){
-            echo "<p class='p". $count . "' id='p" . $prodCount . "'>" . $row['produktName']. "</p><input type='button' class='btnX".$count."' value='x' id='btnX".$prodCount ."' style='display: none'>";
+            echo "<p class='p". $count . "' id='p" . $prodCount . "'>" . $row['produktName']. "</p><input type='button' class='btnX' value='x' id='btnX".$prodCount ."' style='display: none'>";
             $prodCount++;
         }
     }

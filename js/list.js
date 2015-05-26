@@ -31,6 +31,8 @@ $(document).ready(function (){
     $(document).on("click", '.btnShow', function(e){
         
         var num = getId($(this));
+        var location = $('div' + num +'');
+        
         $('.p'+num+'').toggle('active');
         $('#btnEdit' + num + '').toggle('slow');
         $('#btnDeleteList' + num + '').toggle('slow');
@@ -51,11 +53,21 @@ $(document).ready(function (){
     $(document).on("click", '.btnEdit', function(e){
         
         var num = getId($(this));
+    
+        var location = $('#div' + num +'');
         
         $('.p' + num + '').toggleClass('active');
-        $('.btnX' + num + '').show();
-        
+        $('.btnX', location).fadeToggle('fast');
+     
     })
+    
+    $('document').on("click", '.btnX', function(e){
+        console.log("wtf");
+        var num = getId($(this));
+        console.log(num);
+        $('#p' + num + '').hide();
+    })
+    
     function getId(obj){
         console.log(obj);
         var id = obj.attr('id');
