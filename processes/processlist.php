@@ -29,37 +29,45 @@ echo $user;
 var_dump($list);
 
 
-function checkList($conn, $list){
+function getListId($conn, $list){
+    
+    $sql = "SELECT listId FROM list WHERE listName='$list'";
+    
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    return $row['listId'];
+}
+function checkList($conn, $list, $user){
         
-    if ($result = mysqli_query($conn, "SELECT listId FROM list WHERE '$list'= listId" )) { //om email är samma som någon email i db
+    if ($result = mysqli_query($conn, "SELECT listId FROM list WHERE '$list'= listId AND userName='$user'" )) { //om email är samma som någon email i db
 
     $row_cnt = mysqli_num_rows($result); //antar rader med samma email
     if($row_cnt < 1)
     {
-        return true;
+        return $list;
     }
     else
     {
        // echo "<script>alert('användare finns redan!');</script>";
-       echo "vaaafaaan";
+       $list = "Inköpslista". $row_cnt + 1;
         
     }
         mysqli_free_result($result);
 }
 
 }
-function injectproduct($conn, $user, $arr, $list){
+function injectproduct($conn, $user, $arr, $listId){
     
     foreach($arr as $value){
         
             $sql = "INSERT INTO produkt (produktName, UserName, listId) 
-            VALUES ('$value', '$user', '$list')";
+            VALUES ('$value', '$user', '$listId')";
         
         if($conn->query($sql) === true){
          echo "nice";   
         }
         else{
-            echo $value. $user. $list;
+            echo $value. $user. $listId;
             echo "vafan ". $conn->error;
         }
     }
@@ -69,7 +77,7 @@ function injectproduct($conn, $user, $arr, $list){
     
 function addList($conn, $list, $user){
     
-    $sql = "INSERT INTO list (listId, userName)
+    $sql = "INSERT INTO list (listName, userName)
             VALUES ('$list', '$user')";
     
     if($conn->query($sql) === true){
@@ -80,12 +88,12 @@ function addList($conn, $list, $user){
        }
 }
  
-injectproduct($conn, $user, $arr, $list);
     
-if(checkList($conn, $user) === true){
-    addList($conn, $list, $user);
-}
-    else{
-        echo "den fanns...???!";
-}
-header ('location: ../pages/page.php');
+$list= checkList($conn, $list, $user);
+addList($conn, $list, $user);
+
+$listId = getListId($conn, $list);
+var_dump($listId);
+injectproduct($conn, $user, $arr, $listId);
+
+header('location: ../pages/page.php');

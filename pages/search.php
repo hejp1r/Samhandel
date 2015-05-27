@@ -8,7 +8,7 @@ if(isset($_POST['search'])) //körs bara om man har skrivit något och klickat p
 	$searchq = preg_replace("#[^0-9a-z]#i", "", $searchq);
 
 
-	$query = mysqli_query($conn, "SELECT * FROM user WHERE userName LIKE '%$searchq%'") or die("kunde inte söka");
+	$query = mysqli_query($conn, "SELECT * FROM list WHERE listId LIKE '%$searchq%'") or die("kunde inte söka");
 	$count = mysqli_num_rows($query);
 	if($count == 0)
 	{
@@ -18,9 +18,9 @@ if(isset($_POST['search'])) //körs bara om man har skrivit något och klickat p
 	{
 		while($row = mysqli_fetch_array($query))
 		{
-			$userName = $row['userName'];
+			$listId = $row['listId'];
 
-			$output .= '<div>'.$userName. '</div>';
+			$output .= '<div>'.$listId. '</div>';
 		}
 	}
 }

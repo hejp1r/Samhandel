@@ -27,14 +27,26 @@ echo "$user";
 
 function printLists($conn, $user){
     echo "jo";
-    $sql = "SELECT listId FROM list WHERE userName='$user'";
+    $sql = "SELECT * FROM list WHERE userName='$user'";
     
     $result = $conn->query($sql);
     if($result){
-            while($row = $result->fetch_assoc()){
-                $listId = $row['listId'];
-                echo "<h1>".$listId."</h1>";
-                printProducts($conn, $listId);
+        $count = 1;
+        while($row = $result->fetch_assoc()){
+            echo "<div class='listdiv' id='div". $count."'>";
+            $listName = $row['listName'];
+            $listId = $row['listId'];
+            echo "<h2>".$listName."</h2><input type='button' value='Visa' class='btnShow' id='btnShow" . $count ."'>";
+            printProducts($conn, $listId, $count);
+        //    echo "<input type='button' value='Visa' class='btnchange' id='btchange".$count ."'>";
+            echo "<form action='../processes/deleteList.php' method='POST'>  
+                    <input type='button' value='ändra' class='btnEdit' id='btnEdit" . $count . "'>
+                    <input type='hidden' value='".$listId."' name='list'>
+                    <input type='submit' value='radera lista' class='btnDeleteList' name='btnDeleteList". $count."' id='btnDeleteList".                          $count . "'>
+                </form>
+                
+                </div>";
+            $count++;
         }
     }
     else{
@@ -44,15 +56,17 @@ function printLists($conn, $user){
 echo "kom igen";
 printLists($conn, $user);
 
-function printProducts($conn, $listId){
-    echo $listId;
+function printProducts($conn, $listId, $count){
+    //echo $listId;
     $sql = "SELECT produktName FROM produkt WHERE listId='$listId'";
     
     $result = $conn->query($sql);
     
     if($result){
+        $prodCount = 1;
         while($row = $result->fetch_assoc()){
-            echo "<p>".$row['produktName']."</p>";
+            echo "<p class='p". $count . "' id='p" . $prodCount . "'>" . $row['produktName']. "</p><input type='button' class='btnX' value='x' id='btnX".$prodCount ."' style='display: none'>";
+            $prodCount++;
         }
     }
     else{

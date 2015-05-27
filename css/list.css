@@ -16,8 +16,13 @@ body{
 h1{
     font-family: futura;
 }
+h2{
+    font-family: futura;
+}
 p{
+    position: static;
     font-family: cursive;
+    display: none;
 }
 #container{
     text-align: center;
@@ -78,4 +83,68 @@ p{
 .addp:hover {
   background: #918f88;
   text-decoration: none;
+}
+.btnShow{
+    display: inline-block;
+}
+.btnX{
+    display: none;
+    
+}
+.active{
+    opacity: 0.4;
+    display: inline-block;
+}
+.show{
+    display: inline-block;
+}
+.btnX {
+    position: relative;
+    bottom: 40px;
+    left: 100px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    display: inline-block;
+  background: #ff0000;
+  background-image: -webkit-linear-gradient(top, #ff0000, #420000);
+  background-image: -moz-linear-gradient(top, #ff0000, #420000);
+  background-image: -ms-linear-gradient(top, #ff0000, #420000);
+  background-image: -o-linear-gradient(top, #ff0000, #420000);
+  background-image: linear-gradient(to bottom, #ff0000, #420000);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 13px;
+  padding: 2px 7px 4px 7px;
+  text-decoration: none;
+    border: 0;
+}
+
+.btnX:hover {
+    border: 0;
+  background: #d61c1c;
+  text-decoration: none;
+}
+.btnX:focus{
+ outline: 0;   
+}
+.nice{
+    animation-name: wing;
+    animation-duration: 2s infinite alternate;
+ -webkit-animation: wing 2s infinite alternate;   
+}
+@-webkit-keyframes wing{
+	0% { top: 100px;, left: 10px;}
+	100% { top: 175px;, left: 10px;}
+}
+.btnEdit{
+    display: none;
+}
+.btnDeleteList{
+    display: none;
+}
+.listdiv{
+ position: relative;
 }

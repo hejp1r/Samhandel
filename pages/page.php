@@ -19,6 +19,7 @@ else{
         <div id="container">
             <div id="box">
                 <h1>Ny Lista</h1>
+                <input type="text" placeholder="Namnet på den nya listan" id="listnamn">
                 <input type="button" value="+" id="nylista">
             </div>
         </div>

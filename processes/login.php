@@ -41,7 +41,7 @@ function checkPassword($user, $pass, $conn){
     
     echo $password. ".......hash: ";
     
-    $hash = mysqli_fetch_assoc($result);
+    $hash = $result->fetch_assoc();
     
     echo $hash['hash'];
     
