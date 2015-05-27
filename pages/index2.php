@@ -19,36 +19,32 @@ else{
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		
 			<header>
+
 				<div class = "menu">
-                    <input type="submit" name="minalistor" id="minalistor" value="Mina listor" /> 
-                    <input type="submit" name="dagar" id="dagar" value="SPECIAL DAYS" />
-                    <form action ="../processes/logout.php">
-                    <input type="submit" name="loggaut" id="loggaut" value="Logga ut"/>
-                    </form>	
-                    
-                    
+					<a href="index2.php">Mina listor</a>
+					<a href="registration.php">SPECIAL DAYS</a>
+					<form action ="loggaut.php">
+					<a href="../processes/logout.php">Logga ut</a>
+					</form>  
                 </div>
-				<h2>SAMHANDLA</h2>
+
+				<h1>SAMHANDLA</h1>
+				<div class = "search">
+                    <form action ="resultat.php" method="POST">
+					<input type="text" name="search" placeholder = "Sök efter listor"/>
+					<input type="submit" value=">>" />
+					</form>
+				</div>
 			</header>
 			<div id="banner">
 				<br/>
-				<div class = "search">
-                    <form action ="index2.php" method="POST">
-					<input type="text" name="search" placeholder = "Sök efter listor"/>
-					<input type="submit" value=">>" />
-
-					</form>
-
-
-					<?php
-					include_once("search.php");
-					 print ("$output"); ?>
-				</div>
+				
 			</div>
 			<div id="content2"><br>
                 
                     
             <div id="container">
+            <!--Lägg till bild -->
             <form id ="form" action="index2.php" method ="POST" enctype="multipart/form-data">
 			File:
 			<input type="file" name="image"><input type="submit" value="Upload">
@@ -85,15 +81,18 @@ else{
 			?>
             <div id="box">
                 <h3>Ny Lista</h3>
-
+                <input type="text" placeholder="Namnet på den nya listan" id="listnamn">
                 <input type="button" value="+" id="nylista">
+
             </div>
 
-        </div>
-        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="../js/list.js"></script>
+             <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../js/list.js"></script>   
+        <?php include("../processes/printLists.php"); ?>
 
-        <script src="../js/addprodukt.js"></script>
+        
+        </div>
+       
 
 
     

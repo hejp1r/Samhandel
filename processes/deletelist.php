@@ -27,7 +27,7 @@ function deleteList($conn, $list){
     
     if($conn->query($sql) === true && $conn->query($query) === true){
         echo "listan är booorta";
-        header('Location: ../pages/page.php');
+        header('Location: ../pages/index2.php');
     } else{
         echo "va i helvete ". $conn->error;
     }

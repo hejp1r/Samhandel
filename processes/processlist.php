@@ -103,4 +103,4 @@ $listId = getListId($conn, $list);
 var_dump($listId);
 injectproduct($conn, $user, $arr, $listId);
 
-header('location: ../pages/page.php');
+header('location: ../pages/index2.php');

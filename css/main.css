@@ -3,7 +3,7 @@ text-align: center;
 }
 
 header{
-height: 15,5%;
+height: 16%;
 background-color: #FF9900;
 width: 100%;
 z-index: 10;
@@ -22,15 +22,15 @@ padding: 4px;
 
 }
 
-h2{
+h3{
 	font: futura;
 font-size: 200%;
 letter-spacing: 4px;
-color: white;
-text-shadow: 2px 2px #C8C8C8 ;
 padding: 4px;
-
+ text-align: center;
 }
+
+
 
 p{
     font-family: futura;
@@ -43,11 +43,13 @@ label{
 
 .menu{
    position: absolute;
-    width: 100px;
+    width: 150px;
     right: 130px;
       position:right;
     text-align:right;
   font-family: futura;
+  color: #FFFFFF;
+
 
 }
 
@@ -98,15 +100,13 @@ background-image: url('../img/bild.jpg');
 	position:absolute;
 	background: #FFFFFF;
 	top:427px;
-	height:2000px;
+	height:1000px;
 	z-index: 1;
 	width: 100%;
 	
 }
 
-#content{
-  height:2000px;
-}
+
 
 legend
 {
@@ -131,9 +131,10 @@ fieldset {
 }
 
 a{
-	color:#9999FF;
+	color: #FFFFFF;
 	font-size: 130%
 }
+
 
 #lista{
     position: absolute;
@@ -157,6 +158,12 @@ p{
     font-family: cursive;
 
 }
+
+#listnamn{
+   text-align: center;
+
+    margin-left: +5%;
+ }
 #container{
     text-align: center;
     background-color: antiquewhite;
@@ -197,6 +204,7 @@ p{
 }
 #nylista:focus{
     outline: 0;
+
 }
 #box{
 
