@@ -41,6 +41,8 @@ function printLists($conn, $user){
         //    echo "<input type='button' value='Visa' class='btnchange' id='btchange".$count ."'>";
             echo "<form action='../processes/deleteProd.php' method='POST' id='form" . $count . "'>  
                     <input type='button' value='ändra' class='btnEdit' id='btnEdit" . $count . "'>
+                    <input type='text' class='txtAdd' id='txtAdd" . $count . "'>
+                    <input type='button' value='+' class='btnAdd' id='btnAdd". $count . "'>
                     <input type='hidden' value='".$listId."' name='list'>
                 </form>
                 <form action='../processes/deleteList.php' method='POST'>

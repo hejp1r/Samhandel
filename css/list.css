@@ -96,7 +96,7 @@ p{
     display: inline-block;
 }
 .show{
-    display: inline-block;
+    display: block;
 }
 .btnX {
     position: relative;
@@ -147,4 +147,10 @@ p{
 }
 .listdiv{
  position: relative;
+}
+.btnAdd{
+    display: none;
+}
+.txtAdd{
+    display: none;
 }

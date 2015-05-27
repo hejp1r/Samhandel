@@ -20,17 +20,18 @@ if ($conn->connect_error) {
     echo "upprättad kontakt";
 }
 
+$user = $_SESSION['user'];
 $list = $_POST['list'];
-$arr = $_POST['produkt'];
+$arrDel = $_POST['Delete'];
+$arrAdd = $_POST['Add'];
 
-function deleteProducts($conn, $arr, $list){
-    foreach($arr as $prod){
+function deleteProducts($conn, $arrDel, $list){
+    foreach($arrDel as $prod){
         
         $sql = "DELETE FROM produkt WHERE produktName='$prod' AND listId='$list'";
         
         if($conn->query($sql) === true){
             echo "niiiiice ";
-           // header('Location: ../pages/page.php');
         } else{
             echo "blev inget med det ". $conn->error;
             
@@ -38,4 +39,21 @@ function deleteProducts($conn, $arr, $list){
     }
 }
 
-deleteProducts($conn, $arr, $list);
+function addProducts($conn, $arrAdd, $list, $user){
+    
+    foreach($arrAdd as $prod){
+        
+        $sql = "INSERT INTO produkt (produktName, userName, listId)
+                VALUES ('$prod', '$user', '$list')";
+        
+        if($conn->query($sql) === true){
+            echo "fyfaaan va nice";
+        } else{
+         echo "helvete ". $conn->error;   
+        }
+    }
+}
+deleteProducts($conn, $arrDel, $list);
+addProducts($conn, $arrAdd, $list, $user);
+
+header('Location: ../pages/page.php');

@@ -1,6 +1,5 @@
 $(document).ready(function (){
     
-
     $('#nylista').click(function(){
         var length = getLength();
        // console.log(length);
@@ -56,6 +55,10 @@ $(document).ready(function (){
     
         var location = $('#div' + num +'');
         
+        $('#txtAdd' + num + '').toggle('slow');//prop("type", "text");
+        console.log($('#txtAdd' + num + ''));
+        $('#btnAdd' + num + '').toggle('fast');
+        
         $('.p' + num + '').toggleClass('active');
         $('.btnX', location).fadeToggle('fast');
      
@@ -72,7 +75,7 @@ $(document).ready(function (){
         $('#btnEdit').val('spara');
   //      alert(value);
         
-        $('#form' + formnum + '').append("<input type='hidden' value='" + value + "' name='produkt[]'>");
+        $('#form' + formnum + '').append("<input type='hidden' value='" + value + "' name='Delete[]'>");
         $('#p' + num + '', location).hide();
         $('#btnX' +  num + '', location).hide();
         console.log($('#btnEdit'+ num +''));
@@ -81,6 +84,26 @@ $(document).ready(function (){
         console.log("wtf");
 
     })
+     $(document).on("click", '.btnAdd', function(e){
+         
+         var num = getId($(this));
+         
+         var formnum = getId($(this).parent());
+         
+         var produkt = $('input[id="txtAdd'+num+'"]').val();
+         
+         var newnum = $('.p' + num + '').length + 1;
+         
+         console.log($('#div' + formnum + ''));
+         $('#form' + formnum + '').append("<input type='hidden' value='" + produkt + "' name='Add[]'>");
+         $('#form' + formnum + '').before("<p class='p"+num+" active' id='p"+newnum+"' style='display: block;'>"+produkt+"</p>");
+         $('#p'+newnum+'').after("<input type='button' class='btnX' value='x' id='btnX"+newnum+"'>");
+         $('#txtAdd' + num + '').val("");
+         
+         $('#btnEdit' + formnum + '').prop('type', 'submit');
+         $('#btnEdit' + formnum + '').val('spara');
+         
+     })
     
     function getId(obj){
         console.log(obj);
@@ -117,3 +140,5 @@ $(document).ready(function (){
 //en lista raderas genom att det den ingår i ett form som innehåller en gömd input med listid'et. När man klickar på knappen 'radera lista' submitas den till servern som där tar hand om det.
 
 //En lista redigeras igenom att inputen man klickar bort, addas till det gömda formet runt knappen ändra, om man redigerar det så kommer värdet läggas till och när man submitar postas det till servern.
+
+//Man kan adda saker till en lista igenom att ett inputfield kommer fram när man klickar på ändra (hur?), som har en knapp som addar inputfieldet dels som en paragraf i listan, och dels som en hidden input i fieldet som ska submittas med name='add', det som ska raderas får ha name='delete';
