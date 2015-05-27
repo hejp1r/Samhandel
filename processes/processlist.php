@@ -39,17 +39,24 @@ function getListId($conn, $list){
 }
 function checkList($conn, $list, $user){
         
-    if ($result = mysqli_query($conn, "SELECT listId FROM list WHERE '$list'= listId AND userName='$user'" )) { //om email är samma som någon email i db
+    if ($result = mysqli_query($conn, "SELECT listName FROM list WHERE '$list'= listName AND userName='$user'" )) { //om email är samma som någon email i db
+        echo "inside ";
 
     $row_cnt = mysqli_num_rows($result); //antar rader med samma email
+        echo "cccppppp  " ;
     if($row_cnt < 1)
     {
         return $list;
+        echo "whaat";
     }
     else
     {
-       // echo "<script>alert('användare finns redan!');</script>";
-       $list = "Inköpslista". $row_cnt + 1;
+        $query = $conn->query("SELECT * FROM list");
+        $row = mysqli_num_rows($query);
+        $list = "Inköpslista #" . ($row + 1);
+        echo $list;
+        var_dump($list);
+        return $list;
         
     }
         mysqli_free_result($result);
@@ -96,4 +103,4 @@ $listId = getListId($conn, $list);
 var_dump($listId);
 injectproduct($conn, $user, $arr, $listId);
 
-header('location: ../pages/page.php');
+//header('location: ../pages/page.php');

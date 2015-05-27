@@ -39,8 +39,11 @@ function printLists($conn, $user){
             echo "<h2>".$listName."</h2><input type='button' value='Visa' class='btnShow' id='btnShow" . $count ."'>";
             printProducts($conn, $listId, $count);
         //    echo "<input type='button' value='Visa' class='btnchange' id='btchange".$count ."'>";
-            echo "<form action='../processes/deleteList.php' method='POST'>  
+            echo "<form action='../processes/deleteProd.php' method='POST' id='form" . $count . "'>  
                     <input type='button' value='ändra' class='btnEdit' id='btnEdit" . $count . "'>
+                    <input type='hidden' value='".$listId."' name='list'>
+                </form>
+                <form action='../processes/deleteList.php' method='POST'>
                     <input type='hidden' value='".$listId."' name='list'>
                     <input type='submit' value='radera lista' class='btnDeleteList' name='btnDeleteList". $count."' id='btnDeleteList".                          $count . "'>
                 </form>

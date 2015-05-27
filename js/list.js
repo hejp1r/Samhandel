@@ -5,7 +5,7 @@ $(document).ready(function (){
         var length = getLength();
        // console.log(length);
         if($('#listnamn').val()==''){
-           $('#listnamn').val('Inköpslista #' + (length+1));
+           $('#listnamn').val('Inköpslista');
         }
         var list = createList(length);
         $('#box').append(list);
@@ -46,8 +46,8 @@ $(document).ready(function (){
             
        */ 
     })
-    $('document').on("click", '.btnDeleteList', function(e){
-        alert("sääääker?");
+    $(document).on("click", '.btnDeleteList', function(e){
+    //    alert("sääääker?");
     })
     
     $(document).on("click", '.btnEdit', function(e){
@@ -61,11 +61,25 @@ $(document).ready(function (){
      
     })
     
-    $('document').on("click", '.btnX', function(e){
-        console.log("wtf");
+    $(document).on("click", '.btnX', function(e){
         var num = getId($(this));
-        console.log(num);
-        $('#p' + num + '').hide();
+        
+        var formnum = getId($(this).parent());
+        var location = $('#div' + formnum + '');
+        
+        var value = $('#p' + num + '', location).text();
+        console.log(value);
+        $('#btnEdit').val('spara');
+  //      alert(value);
+        
+        $('#form' + formnum + '').append("<input type='hidden' value='" + value + "' name='produkt[]'>");
+        $('#p' + num + '', location).hide();
+        $('#btnX' +  num + '', location).hide();
+        console.log($('#btnEdit'+ num +''));
+        $('#btnEdit' + formnum + '').prop('type', 'submit');
+        $('#btnEdit' + formnum + '').val('spara');
+        console.log("wtf");
+
     })
     
     function getId(obj){
@@ -75,7 +89,7 @@ $(document).ready(function (){
         return num;
     }
     function getLength(){
-        return $('.listclass').length+1;
+        return $('.listclass').length + 1;
     }
     function createList(length){
         return  "<div class='listclass' id='list" + length + "' name='list" + length + "'>"
