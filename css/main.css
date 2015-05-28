@@ -207,6 +207,8 @@ p{
 
 }
 #box{
+    bottom: 20%;
+    margin-bottom: 20%;
 
 }
 .addp {
@@ -226,6 +228,8 @@ p{
   background: #918f88;
   text-decoration: none;
 }
+
+
 
 .search{
 

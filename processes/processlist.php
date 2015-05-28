@@ -23,6 +23,7 @@ if ($conn->connect_error) {
 $user = $_SESSION['user'];
 $arr= $_POST['prodarray'];
 $list = $_POST['list'];
+$file = $_FILES['image']['tmp_name'];
 
 var_dump($arr);
 echo $user;
@@ -84,6 +85,7 @@ function injectproduct($conn, $user, $arr, $listId){
     
 function addList($conn, $list, $user){
     
+    echo "listaaaa: ". $list;
     $sql = "INSERT INTO list (listName, userName)
             VALUES ('$list', '$user')";
     
@@ -96,11 +98,45 @@ function addList($conn, $list, $user){
 }
  
     
-$list= checkList($conn, $list, $user);
+$list=checkList($conn, $list, $user);
 addList($conn, $list, $user);
 
 $listId = getListId($conn, $list);
 var_dump($listId);
 injectproduct($conn, $user, $arr, $listId);
 
-header('location: ../pages/index2.php');
+/*function addImg($conn, $file, $listId){
+
+    echo "i bild funktionen!";
+			if(!isset($file))
+			{
+				echo "Välj en bild";
+			}
+			else
+			{
+                echo "ännu längre in! ";
+				$image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
+				$image_name = addslashes($_FILES['image']['name']);
+				$image_size = getimagesize($_FILES['image']['tmp_name']);
+ 
+				if($image_size == FALSE)
+				{
+					echo "Det är inte en bild";
+				}
+				else
+				{
+                    $sql = "INSERT INTO images (imgName, img, listId) VALUES ('$image_name', '$image', '$listId')";
+					if ($conn->query($sql) === true);
+					{
+                        echo "whaaat";
+					//$lastid = $conn->insert_id;
+					//echo "Bild uppladdad <p/> Din Bild: <p/> <img src='/get.php?id=$lastid'>";
+					//return "<img src='get.php?id='$lastid'>";
+					}
+					
+				}
+			}
+}
+
+//addImg($conn, $file, $listId);
+//header('location: ../pages/page.php');

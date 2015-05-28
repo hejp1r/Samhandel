@@ -2,7 +2,8 @@
 	$conn = new mysqli("localhost", "root", "root", "samhandla") or die($conn->connect_error());
 
 	$id = addslashes($_REQUEST['id']);
-	$query_result = $conn->query("SELECT * FROM images WHERE id = '$id'");
+	$query_result = $conn->query("SELECT * FROM images WHERE listId = '$id'");
+    echo $query_result;
 	$assoc = mysqli_fetch_array($query_result);
 	$blob = $assoc['image']; // en array nu
 	$image = imagecreatefromstring($blob);

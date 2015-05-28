@@ -24,10 +24,11 @@ $list = $_POST['list'];
 function deleteList($conn, $list){
     $sql = "DELETE FROM list WHERE listId='$list'";
     $query = "DELETE FROM produkt WHERE listId='$list'";
+    $quest = "DELETE FROM comments WHERE listId='$list'";
     
-    if($conn->query($sql) === true && $conn->query($query) === true){
+    if($conn->query($sql) === true && $conn->query($query) == true && $conn->query($quest) === true){
         echo "listan är booorta";
-        header('Location: ../pages/index2.php');
+        header('Location: ../pages/page.php');
     } else{
         echo "va i helvete ". $conn->error;
     }

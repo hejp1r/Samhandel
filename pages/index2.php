@@ -11,6 +11,7 @@ else{
 	<head>
 	<title>SamHandla mera</title>
 		<link rel="stylesheet" href= "../css/main.css">
+        <link rel="stylesheet" href="../css/list.css">
 		<script src="../js/main.js"></script>
         <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 	</head>
@@ -72,15 +73,17 @@ else{
 					if ($conn->query("INSERT INTO images (name, image) VALUES ('$image_name', '$image')"));
 					{
 					$lastid = $conn->insert_id;
-					//echo "Bild uppladdad <p/> Din Bild: <p/> <img src='/get.php?id=$lastid'>";
-					echo "Bild uppladdad <p/> Din Bild: <p/> <img src='get.php?id=$lastid'>";
+                        
+                        echo "okeej";
+					echo "Bild uppladdad <p/> Din Bild: <p/> <img src='/get.php?id=$lastid'>";
+					//echo "Bild uppladdad <p/> Din Bild: <p/> <img src='get.php?id=$lastid'>";
 					}
 					
 				}
 			}
 			?>
             <div id="box">
-                <h3>Ny Lista</h3>
+                <h2>Ny Lista</h2>
                 <input type="text" placeholder="Namnet på den nya listan" id="listnamn">
                 <input type="button" value="+" id="nylista">
 

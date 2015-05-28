@@ -1,5 +1,7 @@
 body{
     background-color: bisque;
+    
+
 }
 .addp:focus{
     outline: 0;
@@ -23,6 +25,7 @@ p{
     position: static;
     font-family: cursive;
     display: none;
+   
 }
 #container{
     text-align: center;
@@ -153,4 +156,14 @@ p{
 }
 .txtAdd{
     display: none;
+}
+.divcom{
+    background-color: wheat;
+    width: 40%;
+}
+.contentCom{
+    display: block;
+}
+.userCom{
+    display: block;
 }

@@ -105,6 +105,21 @@ $(document).ready(function (){
          
      })
     
+     $(document).on("click", '.showCom', function(e){
+         var num = getId($(this));
+         
+         $('#listCom' + num + '').toggle('fast');
+         $('#textarea').val("");
+         
+     })
+     
+     $(document).on("click", '.btnShare', function(e){
+         var num = getId($(this));
+         
+         $('#shareform' + num + '').append("<input type='text' name='sharedUser'><input type='submit' value='Dela'>");
+         
+         
+     })
     function getId(obj){
         console.log(obj);
         var id = obj.attr('id');
@@ -121,6 +136,7 @@ $(document).ready(function (){
                 +      "<input type='submit' value='+' class='addp' id='btn" + length + "'>" //med en sluttagg här så förstörs allt, WTF?!
                 +      "<form action='../processes/processlist.php' method='POST'>"
                 +          "<input type='hidden' value='" + $('#listnamn').val() + "' name='list'>"
+         //       +           "<input type='file' name='image'>"
                 +          "<input type='submit' value='sparalista' class='save' id='save" + length + "' name='save" + length + "'>"
                 +   "</form>"
                 +"</div>";    
@@ -142,3 +158,5 @@ $(document).ready(function (){
 //En lista redigeras igenom att inputen man klickar bort, addas till det gömda formet runt knappen ändra, om man redigerar det så kommer värdet läggas till och när man submitar postas det till servern.
 
 //Man kan adda saker till en lista igenom att ett inputfield kommer fram när man klickar på ändra (hur?), som har en knapp som addar inputfieldet dels som en paragraf i listan, och dels som en hidden input i fieldet som ska submittas med name='add', det som ska raderas får ha name='delete';
+
+//kommentarsfält. När listorna printas ut, så kommer möjligheten att kommentera dom, alla som har behörighet till listan. Det kommer finnas en knapp som är visa kommentarsfält, en div som redan är skapad men med display nonen som med vår vän jQuery kommer att visa den. Ett input-field och en knapp som är skriv kommentar.
