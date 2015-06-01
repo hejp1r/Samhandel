@@ -56,4 +56,4 @@ function addProducts($conn, $arrAdd, $list, $user){
 deleteProducts($conn, $arrDel, $list);
 addProducts($conn, $arrAdd, $list, $user);
 
-header('Location: ../pages/page.php');
+header('Location: ../pages/index2.php');

@@ -33,8 +33,8 @@ $(document).ready(function (){
         var location = $('div' + num +'');
         
         $('.p'+num+'').toggle('active');
-        $('#btnEdit' + num + '').toggle('slow');
-        $('#btnDeleteList' + num + '').toggle('slow');
+        $('#btnEdit' + num + '').slideToggle('fast');
+        $('#btnDeleteList' + num + '').slideToggle('fast');
         
         //$('#btnX' + id + '').toggleClass('show');
    /*         function(){
@@ -116,7 +116,9 @@ $(document).ready(function (){
      $(document).on("click", '.btnShare', function(e){
          var num = getId($(this));
          
-         $('#shareform' + num + '').append("<input type='text' name='sharedUser'><input type='submit' value='Dela'>");
+         $('#shareform' + num + '').toggle('fast');
+             
+             //"<input type='text' name='sharedUser'><input type='submit' value='Dela'>");
          
          
      })
@@ -137,7 +139,7 @@ $(document).ready(function (){
                 +      "<form action='../processes/processlist.php' method='POST'>"
                 +          "<input type='hidden' value='" + $('#listnamn').val() + "' name='list'>"
          //       +           "<input type='file' name='image'>"
-                +          "<input type='submit' value='sparalista' class='save' id='save" + length + "' name='save" + length + "'>"
+                +          "<input type='submit' value='spara lista' class='save' id='save" + length + "' name='save" + length + "'>"
                 +   "</form>"
                 +"</div>";    
     }

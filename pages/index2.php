@@ -11,8 +11,8 @@ else{
 	<head>
 	<title>SamHandla mera</title>
 		<link rel="stylesheet" href= "../css/main.css">
-        <link rel="stylesheet" href="../css/list.css">
-		<script src="../js/main.js"></script>
+       <!-- <link rel="stylesheet" href="../css/list.css">-->
+		<!--<script src="../js/main.js"></script>-->
         <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 	</head>
 	
@@ -38,19 +38,17 @@ else{
 				</div>
 			</header>
 			<div id="banner">
-				<br/>
-				
 			</div>
-			<div id="content2"><br>
+			<div id="content2">
                 
                     
-            <div id="container">
+                <div id="container">
             <!--Lägg till bild -->
-            <form id ="form" action="index2.php" method ="POST" enctype="multipart/form-data">
+           <!-- <form id ="form" action="index2.php" method ="POST" enctype="multipart/form-data">
 			File:
 			<input type="file" name="image"><input type="submit" value="Upload">
-			</form>
-			<?php
+			</form>-->
+			<?php/*
 			//connect to database
 			$conn = new mysqli("localhost", "root", "root", "samhandla") or die($conn->connect_error());
 			$file = $_FILES['image']['tmp_name'];
@@ -81,25 +79,18 @@ else{
 					
 				}
 			}
-			?>
-            <div id="box">
-                <h2>Ny Lista</h2>
-                <input type="text" placeholder="Namnet på den nya listan" id="listnamn">
-                <input type="button" value="+" id="nylista">
-
-            </div>
-
-             <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="../js/list.js"></script>   
-        <?php include("../processes/printLists.php"); ?>
+			*/?>
+                <div id="box">
+                    <h3>Ny Lista</h3>
+                    <input type="text" placeholder="Namnet på listan" id="listnamn">
+                    <input type="button" value="+" id="nylista">
+                </div>
+                <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+                <script src="../js/list.js"></script>   
+                <?php include("../processes/printLists.php"); ?>
 
         
-        </div>
-       
-
-
-    
+               </div>
 	  	    </div>	
-	
 		</body>
 </html>

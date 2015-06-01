@@ -23,7 +23,7 @@ if ($conn->connect_error) {
 $user = $_SESSION['user'];
 $arr= $_POST['prodarray'];
 $list = $_POST['list'];
-$file = $_FILES['image']['tmp_name'];
+//$file = $_FILES['image']['tmp_name'];
 
 var_dump($arr);
 echo $user;
@@ -40,7 +40,7 @@ function getListId($conn, $list){
 }
 function checkList($conn, $list, $user){
         
-    if ($result = mysqli_query($conn, "SELECT listName FROM list WHERE '$list'= listName AND userName='$user'" )) { //om email är samma som någon email i db
+    if ($result = mysqli_query($conn, "SELECT listName FROM list WHERE '$list'=listName AND userName='$user'" )) { //om email är samma som någon email i db
         echo "inside ";
 
     $row_cnt = mysqli_num_rows($result); //antar rader med samma email
@@ -136,7 +136,7 @@ injectproduct($conn, $user, $arr, $listId);
 					
 				}
 			}
-}
+}*/
 
 //addImg($conn, $file, $listId);
-//header('location: ../pages/page.php');
+header('location: ../pages/index2.php');

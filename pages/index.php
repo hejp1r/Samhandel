@@ -24,7 +24,7 @@
                     </form>
 				</div>
 
-				<h1>VÄLKOMMEN TILL SAMHANDLA MERA</h1>
+				<h1>VÄLKOMMEN TILL SAMHANDLA</h1>
 				</header>
 			<div id="banner">
 			</div>
@@ -32,7 +32,7 @@
 				<br/>
 			
 			<fieldset>
-				<p>Tjänsten bygger på att ni, sambos eller vänner, <br/>kan skapa gemensamma shoppinglistor. Ska ni ha fest? <br/>- Ja men varför inte låta alla skriva in vad som behövs? <br/> Då glöms inget bort och alla blir nöjda. 
+				<p class='intro'>Tjänsten bygger på att ni, sambos eller vänner, <br/>kan skapa gemensamma shoppinglistor. Ska ni ha fest? <br/>- Ja men varför inte låta alla skriva in vad som behövs? <br/> Då glöms inget bort och alla blir nöjda. 
 					
 				</p>
 			</fieldset>

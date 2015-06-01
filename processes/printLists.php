@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(isset($_SESSION['user'])){
-    echo "Welcome " . $_SESSION['user'];
+    //echo "Welcome " . $_SESSION['user'];
 }
 else{
     echo "logga in helvete";
@@ -18,7 +18,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } else{
-    echo "upprättad kontakt";
+   // echo "upprättad kontakt";
 }
 
 $user = $_SESSION['user'];
@@ -39,7 +39,8 @@ function printLists($conn, $user){
             $listId = $row['listId'];
             echo "<h2>".$listName."</h2><input type='button' value='Visa' class='btnShow' id='btnShow" . $count ."'>
                     <input type='button' value='dela' class='btnShare' id='btnShare".$count."'>
-                    <form action='../processes/shareList.php' method='POST' id='shareform". $count."'>
+                    <form action='../processes/shareList.php' class='shareform' method='POST' id='shareform". $count."' style='display: none;'>
+                        <input type='text' placeholder='Användare' name='sharedUser'><input type='submit' value='Dela'>
                         <input type='hidden' name='listId' value='" . $listId . "'>
                     </form>";
             //<img src=get.php?id=$listId>";
@@ -78,7 +79,7 @@ function printLists($conn, $user){
         echo "varför" . $conn->error;
     }
 }
-echo "kom igen";
+
 printLists($conn, $user);
 
 function printProducts($conn, $listId, $count){

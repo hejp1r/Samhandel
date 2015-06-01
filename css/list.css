@@ -30,11 +30,11 @@ p{
 #container{
     text-align: center;
     background-color: antiquewhite;
-    position: absolute;
+    position: relative;
     width: 40%;
     left: 50%;
     margin-left: -20%;
-    top: 20%;
+    top: -500px;
 }
 #nylista {
     position: relative;
